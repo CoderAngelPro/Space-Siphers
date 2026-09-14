@@ -1,0 +1,12 @@
+[gd_scene format=3 uid="uid://shubvlopxymy"]
+
+[ext_resource type="Texture2D" uid="uid://c2qtfso1rmaxd" path="res://Codex Image Sep 11, 2026, 08_41_30 PM.png" id="1_wtcfe"]
+
+[node name="Node2D" type="Node2D" unique_id=1039575177]
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=990331979]
+texture = ExtResource("1_wtcfe")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Sprite2D" unique_id=317241218]
+scale = Vector2(60, 60)
+polygon = PackedVector2Array(0, -9.650001, 0.9333334, -7.066667, 1.5500001, -3.266667, 2.5500002, -1.7833334, 3.3166668, 1.3833334, 7.1000004, 5.016667, 7.6500006, 1.1666667, 8.316668, 5.566667, 7.833334, 9.05, -7.783334, 9.05, -8.316668, 5.6000004, -7.683334, 0.9333334, -7.0833335, 4.816667, -3.266667, 1.45, -2.5833335, -1.7666668, -1.5500001, -3.266667, -0.9166667, -7.0833335)
