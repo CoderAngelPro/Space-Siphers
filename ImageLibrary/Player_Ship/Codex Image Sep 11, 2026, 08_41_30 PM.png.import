@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dueohcohekhw3"
-path="res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"
+uid="uid://c2qtfso1rmaxd"
+path="res://.godot/imported/Codex Image Sep 11, 2026, 08_41_30 PM.png-ad1fccbfc7f690d3ece4659483e21e82.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://icon.svg"
-dest_files=["res://.godot/imported/icon.svg-218a8f2b3041327d8a5756f3a245f83b.ctex"]
+source_file="res://ImageLibrary/Player_Ship/Codex Image Sep 11, 2026, 08_41_30 PM.png"
+dest_files=["res://.godot/imported/Codex Image Sep 11, 2026, 08_41_30 PM.png-ad1fccbfc7f690d3ece4659483e21e82.ctex"]
 
 [params]
 
@@ -38,6 +38,3 @@ process/hdr_as_srgb=false
 process/hdr_clamp_exposure=false
 process/size_limit=0
 detect_3d/compress_to=1
-svg/scale=1.0
-editor/scale_with_editor_scale=false
-editor/convert_colors_with_editor_theme=false

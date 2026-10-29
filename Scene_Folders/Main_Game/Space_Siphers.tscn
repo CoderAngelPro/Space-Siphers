@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://4klxu6qsvyq3"]
+
+[ext_resource type="PackedScene" uid="uid://qyx6u55x7ckd" path="res://SS_Player.tscn" id="1_uw58k"]
+[ext_resource type="PackedScene" uid="uid://c4rqit886lcl7" path="res://SS_Enemies.tscn" id="2_nu15i"]
+
+[node name="Game_Scene" type="Node2D" unique_id=1828185083]
+
+[node name="SS_Player_Node" parent="." unique_id=148265147 instance=ExtResource("1_uw58k")]
+
+[node name="SS_Enemies" parent="." unique_id=1172943775 instance=ExtResource("2_nu15i")]
