@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://qyx6u55x7ckd"]
 
 [ext_resource type="Texture2D" uid="uid://c2qtfso1rmaxd" path="res://ImageLibrary/Player_Ship/Codex Image Sep 11, 2026, 08_41_30 PM.png" id="1_w0fwn"]
+[ext_resource type="Script" uid="uid://cb47hwpt62kh2" path="res://player_health.gd" id="2_gr7o4"]
 
 [node name="SS_Player_Node" type="Node2D" unique_id=148265147]
 
@@ -9,6 +10,10 @@ scale = Vector2(0.025, 0.025)
 texture = ExtResource("1_w0fwn")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=799500562]
+script = ExtResource("2_gr7o4")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1623775827]
+zoom = Vector2(0.5, 0.5)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="CharacterBody2D" unique_id=982869624]
 visible = false
