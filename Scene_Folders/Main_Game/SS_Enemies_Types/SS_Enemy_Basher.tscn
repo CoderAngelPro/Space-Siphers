@@ -1,0 +1,30 @@
+[gd_scene format=3 uid="uid://q3uyqlvlrbpv"]
+
+[ext_resource type="Script" uid="uid://dwkdyvryfetvs" path="res://Scene_Folders/Main_Game/SS_Enemies_Types/ss_enemy_basher.gd" id="1_ufu83"]
+[ext_resource type="Texture2D" uid="uid://ctmnmcirc5bmr" path="res://ImageLibrary/Enemy_Basher/Enemy_Basher_Placeholder.png" id="2_ufu83"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rc4wc"]
+size = Vector2(330, 240)
+
+[node name="SS_Enemy_Basher" type="CharacterBody2D" unique_id=1641955729]
+position = Vector2(258, 142)
+scale = Vector2(0.5, 0.5)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_ufu83")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=735097084]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_ufu83")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=791908539]
+visible = false
+scale = Vector2(0.5, 0.5)
+polygon = PackedVector2Array(-150, 242, -151, 182, -330, 182, -329, 0, -272, 0, -271, -60, -212, -59, -211, -240, 210, -240, 210, -59, 269, -60, 271, 0, 330, -1, 330, 180, 150, 181, 151, 240)
+
+[node name="DamageArea (Area2D)" type="Area2D" parent="." unique_id=246003373]
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea (Area2D)" unique_id=1166674266]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_rc4wc")

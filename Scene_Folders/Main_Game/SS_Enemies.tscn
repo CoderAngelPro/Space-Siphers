@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://c4rqit886lcl7"]
 
-[node name="Node2D" type="Node2D" unique_id=184765980]
+[ext_resource type="PackedScene" uid="uid://q3uyqlvlrbpv" path="res://Scene_Folders/Main_Game/SS_Enemies_Types/SS_Enemy_Basher.tscn" id="1_y44tq"]
+
+[node name="SS_Enemies" type="Node2D" unique_id=464861520]
+
+[node name="SS_Enemy_Basher" parent="." unique_id=338207517 instance=ExtResource("1_y44tq")]
