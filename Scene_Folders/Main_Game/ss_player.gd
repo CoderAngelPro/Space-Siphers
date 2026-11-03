@@ -1,0 +1,60 @@
+extends CharacterBody2D
+
+@onready var player_sprite: Sprite2D = $Sprite2D
+@onready var player_collision_box: CollisionPolygon2D = $CollisionPolygon2D
+@onready var player_normal_color: Color = player_sprite.self_modulate
+var hit_flash_tween: Tween
+
+var player_max_health: int = 100
+var player_move_speed: float = 200.0
+var player_atk_cld: float = 2.0
+var player_dmg: int = 50
+
+var spawn_location: Vector2
+var player_current_health: int
+var player_atk_timer: float
+
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	player_current_health = player_max_health
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _physics_process(delta: float) -> void:
+	var input_direction:= Vector2.ZERO
+	
+	input_direction.x = Input.get_axis("player_move_left", "player_move_right")
+	input_direction.y = Input.get_axis("player_move_up", "player_move_down")
+	input_direction = input_direction.normalized()
+	
+	velocity = input_direction * player_move_speed
+	move_and_slide()
+	
+	if velocity.length_squared() > 0.0:
+		rotation = velocity.angle()
+
+func take_damage(amount: int) -> void:
+	player_current_health -= amount
+	if player_current_health <= 0:
+		player_sprite.hide()
+		player_collision_box.set_deferred("disabled", 1)
+		velocity = Vector2.ZERO
+		set_physics_process(false)
+		set_process_unhandled_input(false)
+		return
+	flash_hit()
+
+func flash_hit() -> void:
+
+	# Stops the previous flash if another hit arrives.
+	if hit_flash_tween != null and hit_flash_tween.is_valid():
+		hit_flash_tween.kill()
+
+	player_sprite.self_modulate = Color.RED
+
+	hit_flash_tween = create_tween()
+	hit_flash_tween.tween_property(
+		player_sprite,
+		"self_modulate",
+		player_normal_color,
+		0.15
+	)	
