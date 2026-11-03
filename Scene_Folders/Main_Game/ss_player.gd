@@ -19,8 +19,7 @@ func _ready() -> void:
 	player_current_health = player_max_health
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-#I added an _ to delta to remove an error
-func _physics_process(_delta: float) -> void:
+func _physics_process(delta: float) -> void:
 	var input_direction:= Vector2.ZERO
 	
 	input_direction.x = Input.get_axis("player_move_left", "player_move_right")
