@@ -1,0 +1,26 @@
+[gd_scene load_steps=4 format=3]
+
+[ext_resource type="PackedScene" path="res://Scene_Folders/Main_Game/SS_Player.tscn" id="1_player"]
+[ext_resource type="PackedScene" path="res://Scene_Folders/Main_Game/SS_Enemies.tscn" id="2_enemies"]
+[ext_resource type="Script" path="res://Scene_Folders/Main_Game/ss_game.gd" id="3_script"]
+
+[node name="Game_Scene" type="Node2D"]
+script = ExtResource("3_script")
+
+[node name="SS_Player_Node" parent="." instance=ExtResource("1_player")]
+
+[node name="SS_Enemies" parent="." instance=ExtResource("2_enemies")]
+
+[node name="HUD" type="CanvasLayer" parent="."]
+
+[node name="Controls" type="Label" parent="HUD"]
+offset_left = 24.0
+offset_top = 20.0
+offset_right = 420.0
+offset_bottom = 48.0
+theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 2
+theme_override_constants/shadow_offset_y = 2
+theme_override_font_sizes/font_size = 18
+text = "WASD  Move     /     Esc  Main menu"
+mouse_filter = 2

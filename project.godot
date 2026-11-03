@@ -10,10 +10,10 @@ config_version=5
 
 [application]
 
-config/name="Project"
-run/main_scene="uid://4klxu6qsvyq3"
+config/name="Space-Siphers"
+run/main_scene="res://Scene_Folders/Main_Menu/SS_Menu.tscn"
 config/features=PackedStringArray("4.7", "GL Compatibility")
-config/icon="res://icon.svg"
+config/icon="res://ImageLibrary/Icons/Godot_Logo.svg"
 
 [autoload]
 
@@ -21,6 +21,9 @@ _mcp_game_helper="*res://addons/godot_ai/runtime/game_helper.gd"
 
 [display]
 
+window/size/viewport_height=720
+window/size/window_width_override=1152
+window/size/window_height_override=720
 window/stretch/mode="canvas_items"
 window/stretch/aspect="expand"
 
