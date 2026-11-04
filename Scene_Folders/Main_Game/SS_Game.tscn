@@ -1,19 +1,22 @@
-[gd_scene load_steps=4 format=3]
+[gd_scene format=3 uid="uid://btuh2ws22bjjj"]
 
-[ext_resource type="PackedScene" path="res://Scene_Folders/Main_Game/SS_Player.tscn" id="1_player"]
-[ext_resource type="PackedScene" path="res://Scene_Folders/Main_Game/SS_Enemies.tscn" id="2_enemies"]
-[ext_resource type="Script" path="res://Scene_Folders/Main_Game/ss_game.gd" id="3_script"]
+[ext_resource type="PackedScene" uid="uid://qyx6u55x7ckd" path="res://Scene_Folders/Main_Game/SS_Player.tscn" id="1_player"]
+[ext_resource type="PackedScene" uid="uid://c4rqit886lcl7" path="res://Scene_Folders/Main_Game/SS_Enemies.tscn" id="2_enemies"]
+[ext_resource type="Script" uid="uid://b7ynupi6bh3kr" path="res://Scene_Folders/Main_Game/ss_game.gd" id="3_script"]
+[ext_resource type="PackedScene" uid="uid://6itb4c4x2xvj" path="res://Scene_Folders/Arena/arena.tscn" id="4_yc37x"]
 
-[node name="Game_Scene" type="Node2D"]
+[node name="Game_Scene" type="Node2D" unique_id=1624846081]
 script = ExtResource("3_script")
 
-[node name="SS_Player_Node" parent="." instance=ExtResource("1_player")]
+[node name="Arena" parent="." unique_id=974625192 instance=ExtResource("4_yc37x")]
 
-[node name="SS_Enemies" parent="." instance=ExtResource("2_enemies")]
+[node name="SS_Player_Node" parent="." unique_id=1711095486 instance=ExtResource("1_player")]
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="SS_Enemies" parent="." unique_id=1564410157 instance=ExtResource("2_enemies")]
 
-[node name="Controls" type="Label" parent="HUD"]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=110301836]
+
+[node name="Controls" type="Label" parent="HUD" unique_id=1380054230]
 offset_left = 24.0
 offset_top = 20.0
 offset_right = 420.0
@@ -23,4 +26,3 @@ theme_override_constants/shadow_offset_x = 2
 theme_override_constants/shadow_offset_y = 2
 theme_override_font_sizes/font_size = 18
 text = "WASD  Move     /     Esc  Main menu"
-mouse_filter = 2

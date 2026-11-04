@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://6itb4c4x2xvj"]
+
+[ext_resource type="Script" uid="uid://d2u13ek622j13" path="res://Scene_Folders/Arena/arena.gd" id="1_mdusd"]
+
+[node name="Arena" type="Node2D" unique_id=974625192]
+script = ExtResource("1_mdusd")
+
+[node name="Background" type="ColorRect" parent="." unique_id=923456366]
+visibility_layer = 512
+offset_left = -4000.0
+offset_top = -4000.0
+offset_right = 4000.0
+offset_bottom = 4000.0
+color = Color(0.043137256, 0.0627451, 0.1254902, 1)
