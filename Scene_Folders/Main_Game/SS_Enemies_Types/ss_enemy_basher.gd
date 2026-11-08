@@ -20,6 +20,8 @@ var player_node: CharacterBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
+	add_to_group("enemies")
+	
 	basher_current_health = BASHER_MAX_HEALTH
 	player_node = get_node("../../SS_Player_Node") as CharacterBody2D
 

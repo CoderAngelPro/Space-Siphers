@@ -1,5 +1,7 @@
 extends CharacterBody2D
 
+@onready var weapons: Node2D = $Weapons2D
+
 @onready var player_sprite: Sprite2D = $Sprite2D
 @onready var player_collision_box: CollisionPolygon2D = $CollisionPolygon2D
 @onready var player_normal_color: Color = player_sprite.self_modulate
@@ -33,13 +35,19 @@ func _physics_process(delta: float) -> void:
 		rotation = velocity.angle()
 
 func take_damage(amount: int) -> void:
-	player_current_health -= amount
-	if player_current_health <= 0:
+	if player_current_health <= 0 or amount <= 0:
+		return
+
+	player_current_health = maxi(player_current_health - amount, 0)
+
+	if player_current_health == 0:
 		player_sprite.hide()
-		player_collision_box.set_deferred("disabled", 1)
+		player_collision_box.set_deferred("disabled", true)
 		velocity = Vector2.ZERO
 		set_physics_process(false)
 		set_process_unhandled_input(false)
+
+		weapons.process_mode = Node.PROCESS_MODE_DISABLED
 		return
 	flash_hit()
 
@@ -58,3 +66,10 @@ func flash_hit() -> void:
 		player_normal_color,
 		0.15
 	)	
+	
+func add_weapon(weapon_scene: PackedScene) -> void:
+	if weapon_scene == null:
+		return
+
+	var weapon := weapon_scene.instantiate()
+	weapons.add_child(weapon)
