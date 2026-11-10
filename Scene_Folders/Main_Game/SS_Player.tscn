@@ -2,6 +2,8 @@
 
 [ext_resource type="Script" uid="uid://byjg005m4ckrl" path="res://Scene_Folders/Main_Game/ss_player.gd" id="1_gr7o4"]
 [ext_resource type="Texture2D" uid="uid://c3g471o2pgyuf" path="res://ImageLibrary/Player_Ship/PlayerShip.png" id="2_gr7o4"]
+[ext_resource type="Script" uid="uid://dosw2je2q8wq5" path="res://turret.gd" id="3_f02as"]
+[ext_resource type="PackedScene" uid="uid://s2de76gh1llc" path="res://Scene_Folders/Main_Game/bullet_2d.tscn" id="4_f02as"]
 
 [node name="SS_Player_Node" type="CharacterBody2D" unique_id=1316858591]
 script = ExtResource("1_gr7o4")
@@ -20,3 +22,12 @@ polygon = PackedVector2Array(-1.9833335, 1.6500001, -1.3333334, 0.4166667, -0.81
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=1623775827]
 zoom = Vector2(0.5, 0.5)
+
+[node name="Weapons2D" type="Node2D" parent="." unique_id=1308684705]
+
+[node name="Turret2D" type="Node2D" parent="Weapons2D" unique_id=903117482]
+script = ExtResource("3_f02as")
+bullet_scene = ExtResource("4_f02as")
+
+[node name="Muzzle2D" type="Marker2D" parent="Weapons2D/Turret2D" unique_id=1084336362]
+position = Vector2(80, 0)
