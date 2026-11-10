@@ -22,8 +22,6 @@ func _ready() -> void:
 	add_to_group("enemies")
 	goopy_current_health = GOOPY_MAX_HEALTH
 	player_node = get_node("/root/Game_Scene/SS_Player_Node") as CharacterBody2D
-	goopy_current_health = GOOPY_MAX_HEALTH
-	player_node = get_node("../../SS_Player_Node") as CharacterBody2D
 
 	spawn_position = Vector2(
 		randf_range(spawn_min.x, spawn_max.x),
@@ -91,8 +89,3 @@ func flash_hit() -> void:
 #	if event.is_action_pressed("test_enemy_damage") and not event.is_echo():
 #		take_damage(10)
 #		print("Goopy health: ", goopy_current_health)	
-func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("test_enemy_damage") and not event.is_echo():
-		take_damage(10)
-		print("Goopy health: ", goopy_current_health)
-	
