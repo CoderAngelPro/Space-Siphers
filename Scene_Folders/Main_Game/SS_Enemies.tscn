@@ -1,7 +1,16 @@
 [gd_scene format=3 uid="uid://c4rqit886lcl7"]
 
 [ext_resource type="PackedScene" uid="uid://q3uyqlvlrbpv" path="res://Scene_Folders/Main_Game/SS_Enemies_Types/SS_Enemy_Basher.tscn" id="1_y44tq"]
+[ext_resource type="PackedScene" uid="uid://cupxt5bv1bue5" path="res://Scene_Folders/Main_Game/SS_Enemies_Types/ss_enemy_goopy.tscn" id="2_f5fsa"]
+[ext_resource type="PackedScene" uid="uid://ll0ay7hsapfi" path="res://Scene_Folders/Main_Game/SS_Enemies_Types/SS_Enemy_SpeedDemon.tscn" id="3_bam3v"]
 
 [node name="SS_Enemies" type="Node2D" unique_id=464861520]
 
 [node name="SS_Enemy_Basher" parent="." unique_id=338207517 instance=ExtResource("1_y44tq")]
+position = Vector2(325, 88)
+
+[node name="SS_Enemy_Goopy" parent="." unique_id=1570355629 instance=ExtResource("2_f5fsa")]
+position = Vector2(-322, -290)
+
+[node name="SS_Enemy_SpeedDemon" parent="." unique_id=879811027 instance=ExtResource("3_bam3v")]
+position = Vector2(383, -265)

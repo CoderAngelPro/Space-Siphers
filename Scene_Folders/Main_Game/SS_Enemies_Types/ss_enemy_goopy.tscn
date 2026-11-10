@@ -1,0 +1,32 @@
+[gd_scene format=3 uid="uid://cupxt5bv1bue5"]
+
+[ext_resource type="Script" uid="uid://dt8lpomajw0kl" path="res://Scene_Folders/Main_Game/SS_Enemies_Types/ss_enemy_goopy.gd" id="1_kwd38"]
+[ext_resource type="Texture2D" uid="uid://bqnawt46xj14p" path="res://ImageLibrary/Enemy_Goopy/ss_goopy.png" id="2_kwd38"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_t2nko"]
+radius = 203.85185
+height = 592.5925
+
+[node name="SS_Enemy_Goopy" type="CharacterBody2D" unique_id=1570355629]
+scale = Vector2(0.75, 0.75)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_kwd38")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." unique_id=1714763255]
+scale = Vector2(0.75, 0.75)
+polygon = PackedVector2Array(-238.22223, -53.333332, -247.11111, -5.3333335, -206.22223, 53.333332, -97.77778, 97.77778, 30.222223, 129.77779, 156.44444, 87.111115, 200.88889, 0, 161.77779, -97.77778, 65.77778, -163.55556, 0, -177.77779, -110.22222, -158.22223, -161.77779, -136.88889)
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=392274131]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_kwd38")
+
+[node name="DamageArea (Area2D)" type="Area2D" parent="." unique_id=1268066606]
+scale = Vector2(0.75, 0.75)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DamageArea (Area2D)" unique_id=1566636592]
+position = Vector2(-19.555557, -24.88889)
+rotation = 1.5707964
+scale = Vector2(0.75, 0.75)
+shape = SubResource("CapsuleShape2D_t2nko")

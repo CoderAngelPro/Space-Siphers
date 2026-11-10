@@ -1,0 +1,77 @@
+[gd_scene format=3 uid="uid://ll0ay7hsapfi"]
+
+[ext_resource type="Texture2D" uid="uid://b6j3cuc0qxoiq" path="res://ImageLibrary/Enemy_SpeedDemon/SpeedDemon_Temp.png" id="1_e7hhs"]
+[ext_resource type="Script" uid="uid://18bgritohr5j" path="res://Scene_Folders/Main_Game/SS_Enemies_Types/ss_enemy_speed_demon.gd" id="1_nm127"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_e7hhs"]
+size = Vector2(542.8148, 490.66666)
+
+[node name="SS_Enemy_SpeedDemon" type="Node2D" unique_id=764777493]
+position = Vector2(423, -276)
+scale = Vector2(0.6, 0.6)
+
+[node name="Speed_Demon_Indv" type="CharacterBody2D" parent="." unique_id=1552343331]
+scale = Vector2(0.6, 0.6)
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_nm127")
+
+[node name="Sprite2D" type="Sprite2D" parent="Speed_Demon_Indv" unique_id=1687795953]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_e7hhs")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Speed_Demon_Indv" unique_id=1805096663]
+scale = Vector2(0.6, 0.6)
+polygon = PackedVector2Array(-134, 185, 134, 186, 203, -19, 203, -139, 54, -184, -58, -185, -202, -140, -204, -20)
+
+[node name="DamageArea (Area2D)" type="Area2D" parent="Speed_Demon_Indv" unique_id=485710057]
+scale = Vector2(0.6, 0.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Speed_Demon_Indv/DamageArea (Area2D)" unique_id=2122245491]
+position = Vector2(0.8888872, -0.88889056)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_e7hhs")
+
+[node name="Speed_Demon_Indv2" type="CharacterBody2D" parent="." unique_id=1098406839]
+scale = Vector2(0.6, 0.6)
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_nm127")
+
+[node name="Sprite2D" type="Sprite2D" parent="Speed_Demon_Indv2" unique_id=1580611572]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_e7hhs")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Speed_Demon_Indv2" unique_id=371117152]
+scale = Vector2(0.6, 0.6)
+polygon = PackedVector2Array(-134, 185, 134, 186, 203, -19, 203, -139, 54, -184, -58, -185, -202, -140, -204, -20)
+
+[node name="DamageArea (Area2D)" type="Area2D" parent="Speed_Demon_Indv2" unique_id=1607060943]
+scale = Vector2(0.6, 0.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Speed_Demon_Indv2/DamageArea (Area2D)" unique_id=1210326776]
+position = Vector2(0.8888872, -0.88889056)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_e7hhs")
+
+[node name="Speed_Demon_Indv3" type="CharacterBody2D" parent="." unique_id=745427517]
+scale = Vector2(0.6, 0.6)
+collision_layer = 2
+collision_mask = 8
+script = ExtResource("1_nm127")
+
+[node name="Sprite2D" type="Sprite2D" parent="Speed_Demon_Indv3" unique_id=1501617660]
+scale = Vector2(0.6, 0.6)
+texture = ExtResource("1_e7hhs")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Speed_Demon_Indv3" unique_id=2070847571]
+scale = Vector2(0.6, 0.6)
+polygon = PackedVector2Array(-134, 185, 134, 186, 203, -19, 203, -139, 54, -184, -58, -185, -202, -140, -204, -20)
+
+[node name="DamageArea (Area2D)" type="Area2D" parent="Speed_Demon_Indv3" unique_id=809474812]
+scale = Vector2(0.6, 0.6)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Speed_Demon_Indv3/DamageArea (Area2D)" unique_id=1627448272]
+position = Vector2(0.8888872, -0.88889056)
+scale = Vector2(0.6, 0.6)
+shape = SubResource("RectangleShape2D_e7hhs")
