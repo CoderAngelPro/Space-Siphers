@@ -15,6 +15,7 @@ var player_dmg: int = 50
 var spawn_location: Vector2
 var player_current_health: int
 var player_atk_timer: float
+var goopy_slow_time_left: float = 0.0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,6 +29,12 @@ func _physics_process(delta: float) -> void:
 	input_direction.y = Input.get_axis("player_move_up", "player_move_down")
 	input_direction = input_direction.normalized()
 	
+	# Repeated Goopy hits refresh the three-second slowdown.
+	if goopy_slow_time_left > 0.0:
+		player_move_speed = 100.0
+	else:
+		player_move_speed = 200.0
+	goopy_slow_time_left = maxf(goopy_slow_time_left - delta, 0.0)
 	velocity = input_direction * player_move_speed
 	move_and_slide()
 	
@@ -50,6 +57,9 @@ func take_damage(amount: int) -> void:
 		weapons.process_mode = Node.PROCESS_MODE_DISABLED
 		return
 	flash_hit()
+	
+func goopy_slowdown_effect() -> void:
+	goopy_slow_time_left = 3.0
 
 func flash_hit() -> void:
 
