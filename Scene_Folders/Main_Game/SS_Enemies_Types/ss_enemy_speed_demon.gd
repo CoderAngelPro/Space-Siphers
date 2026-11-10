@@ -1,11 +1,7 @@
 extends CharacterBody2D
 
 const SPEED_DEMON_MAX_HEALTH: int = 50
-<<<<<<< HEAD
 const SPEED_DEMON_MOVE_SPEED: float = 180.0
-=======
-const SPEED_DEMON_MOVE_SPEED: float = 200.0
->>>>>>> c412252 (Added enemy types Enemy_Goopy and Enemy_Speed_Demon, as well as Ray-made model for Goopy)
 const SPEED_DEMON_DMG: int = 5
 const SPEED_DEMON_ATK_CLD: float = 1.0
 
@@ -24,14 +20,11 @@ var player_node: CharacterBody2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-<<<<<<< HEAD
 	add_to_group("enemies")
 	speed_demon_current_health = SPEED_DEMON_MAX_HEALTH
 	player_node = get_node("/root/Game_Scene/SS_Player_Node") as CharacterBody2D
-=======
 	speed_demon_current_health = SPEED_DEMON_MAX_HEALTH
 	player_node = get_node("../../../SS_Player_Node") as CharacterBody2D
->>>>>>> c412252 (Added enemy types Enemy_Goopy and Enemy_Speed_Demon, as well as Ray-made model for Goopy)
 
 	spawn_position = Vector2(
 		randf_range(spawn_min.x, spawn_max.x),
@@ -94,14 +87,11 @@ func flash_hit() -> void:
 	)
 
 # Only use to test take_damage()
-<<<<<<< HEAD
 #func _unhandled_input(event: InputEvent) -> void:
 #	if event.is_action_pressed("test_enemy_damage") and not event.is_echo():
 #		print("Speed Demon health: ", speed_demon_current_health)	
-=======
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("test_enemy_damage") and not event.is_echo():
 		take_damage(10)
 		print("Speed Demon health: ", speed_demon_current_health)
 	
->>>>>>> c412252 (Added enemy types Enemy_Goopy and Enemy_Speed_Demon, as well as Ray-made model for Goopy)
