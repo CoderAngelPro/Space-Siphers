@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://byjg005m4ckrl" path="res://Scene_Folders/Main_Game/ss_player.gd" id="1_gr7o4"]
 [ext_resource type="Texture2D" uid="uid://c3g471o2pgyuf" path="res://ImageLibrary/Player_Ship/PlayerShip.png" id="2_gr7o4"]
-[ext_resource type="Script" uid="uid://dosw2je2q8wq5" path="res://turret.gd" id="3_f02as"]
+[ext_resource type="Script" uid="uid://dosw2je2q8wq5" path="res://Scene_Folders/Main_Game/SS_Player_Weapon/turret.gd" id="3_f02as"]
 [ext_resource type="PackedScene" uid="uid://s2de76gh1llc" path="res://Scene_Folders/Main_Game/bullet_2d.tscn" id="4_f02as"]
 
 [node name="SS_Player_Node" type="CharacterBody2D" unique_id=1316858591]
