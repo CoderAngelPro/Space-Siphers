@@ -12,9 +12,8 @@ script = ExtResource("3_script")
 
 [node name="SS_Player_Node" parent="." unique_id=1711095486 instance=ExtResource("1_player")]
 
-[node name="SS_Enemies" parent="." unique_id=1564410157 instance=ExtResource("2_enemies")]
+[node name="SS_Enemies" parent="." unique_id=464861520 instance=ExtResource("2_enemies")]
 position = Vector2(157, -298)
-
 [node name="HUD" type="CanvasLayer" parent="." unique_id=110301836]
 
 [node name="Controls" type="Label" parent="HUD" unique_id=1380054230]
