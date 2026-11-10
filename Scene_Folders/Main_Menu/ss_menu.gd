@@ -28,7 +28,3 @@ func _on_settings_visibility_changed() -> void:
 
 func _on_quit_pressed() -> void:
 	get_tree().quit()
-
-
-func _on_item_list_item_clicked(index: int, at_position: Vector2, mouse_button_index: int) -> void:
-	pass # Replace with function body.

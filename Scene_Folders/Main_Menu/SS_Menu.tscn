@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://t0gg42xeit3w"]
 
 [ext_resource type="Script" uid="uid://baadurboj1nc3" path="res://Scene_Folders/Main_Menu/ss_menu.gd" id="1_menu"]
+[ext_resource type="Texture2D" uid="uid://8ciqdyghrnfo" path="res://Scene_Folders/Main_Game/ss_title_name.png" id="2_y7rkq"]
 
 [sub_resource type="StyleBoxFlat" id="Style_panel"]
 bg_color = Color(0.035, 0.07, 0.13, 0.96)
@@ -74,6 +75,8 @@ Button/styles/normal = SubResource("Style_button")
 Button/styles/pressed = SubResource("Style_hover")
 Label/colors/font_color = Color(0.88, 0.96, 1, 1)
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_8ms2w"]
+
 [sub_resource type="StyleBoxFlat" id="Style_play"]
 content_margin_top = 12.0
 content_margin_bottom = 12.0
@@ -112,6 +115,7 @@ grow_vertical = 2
 mouse_filter = 2
 
 [node name="Center" type="CenterContainer" parent="." unique_id=1698045216]
+material = SubResource("CanvasItemMaterial_8ms2w")
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -135,16 +139,10 @@ theme_override_constants/margin_bottom = 32
 layout_mode = 2
 theme_override_constants/separation = 16
 
-[node name="Title" type="Label" parent="Center/MenuPanel/Padding/Content" unique_id=936896417]
+[node name="TextureRect" type="TextureRect" parent="Center/MenuPanel/Padding/Content" unique_id=1821666337]
 layout_mode = 2
-theme_override_font_sizes/font_size = 44
-text = "Space-Siphers"
-horizontal_alignment = 1
-
-[node name="Spacer" type="Control" parent="Center/MenuPanel/Padding/Content" unique_id=1183023049]
-custom_minimum_size = Vector2(0, 8)
-layout_mode = 2
-mouse_filter = 2
+texture = ExtResource("2_y7rkq")
+expand_mode = 5
 
 [node name="PlayButton" type="Button" parent="Center/MenuPanel/Padding/Content" unique_id=452384472]
 unique_name_in_owner = true
@@ -176,7 +174,7 @@ text = "Quit"
 layout_mode = 2
 theme_override_colors/font_color = Color(0.6, 0.71, 0.79, 1)
 theme_override_font_sizes/font_size = 14
-text = "WASD to fly  /  Esc to return to the menu"
+text = "WASD to move / Esc to return to the menu"
 horizontal_alignment = 1
 
 [node name="SettingsWindow" type="AcceptDialog" parent="." unique_id=1375723252]
@@ -184,7 +182,6 @@ oversampling_override = 1.0
 title = "Settings"
 position = Vector2i(0, 36)
 size = Vector2i(460, 300)
-visible = true
 unresizable = true
 popup_window = true
 min_size = Vector2i(460, 300)
@@ -208,6 +205,32 @@ autowrap_mode = 3
 autowrap_trim_flags = 192
 clip_text = true
 vertical_icon_alignment = 0
+
+[node name="Difficulty Level" type="HBoxContainer" parent="SettingsWindow/Options" unique_id=232530345]
+layout_mode = 2
+
+[node name="Label" type="Label" parent="SettingsWindow/Options/Difficulty Level" unique_id=2079017544]
+layout_mode = 2
+text = "Difficulty"
+vertical_alignment = 1
+
+[node name="OptionButton" type="OptionButton" parent="SettingsWindow/Options/Difficulty Level" unique_id=326097585]
+layout_mode = 2
+toggle_mode = false
+button_mask = 0
+shortcut_feedback = false
+shortcut_in_tooltip = false
+alignment = 1
+autowrap_mode = 3
+autowrap_trim_flags = 0
+icon_alignment = 1
+item_count = 3
+popup/item_0/text = "Easy"
+popup/item_0/id = 0
+popup/item_1/text = "Medium"
+popup/item_1/id = 1
+popup/item_2/text = "Hard"
+popup/item_2/id = 2
 
 [connection signal="pressed" from="Center/MenuPanel/Padding/Content/PlayButton" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="Center/MenuPanel/Padding/Content/SettingsButton" to="." method="_on_settings_pressed"]
