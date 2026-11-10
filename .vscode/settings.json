@@ -1,0 +1,7 @@
+{
+    "godotTools.inlayHints.gdscript": true,
+    "godotTools.lsp.headless": true,
+    "editor.fontSize": 15,
+    "files.autoSave": "onFocusChange",
+    "editor.wordWrap": "on"
+}

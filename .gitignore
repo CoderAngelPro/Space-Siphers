@@ -2,12 +2,7 @@
 .godot/
 /android/
 .DS_Store
-<<<<<<< HEAD
 addons
-=======
-addons/
-.vscode/
-.codex/
-.aws/
-.agents/
->>>>>>> 5a0638e (Added Main Menu and Main Game scenes with their respective scripts. Updated .gitignore to include additional directories. Deleted the old Space_Siphers scene.)
+.codex
+.aws
+.agents
