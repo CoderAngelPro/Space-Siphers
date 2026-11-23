@@ -1,5 +1,10 @@
 extends Node2D
 
+enum WeaponType { SINGLE, SHOTGUN, ROCKET }
+
+@export var weapon_type: WeaponType = WeaponType.SINGLE
+@export_range(0.0, 90.0) var spread_angle_degrees: float = 45.0
+
 @export var bullet_scene: PackedScene
 @export var damage: int = 50
 @export var attack_range: float = 600.0
@@ -9,23 +14,6 @@ extends Node2D
 
 var cooldown: float = 0.0
 
-
-#func _physics_process(delta: float) -> void:
-	#cooldown = maxf(cooldown - delta, 0.0)
-
-	#var target := find_nearest_enemy()
-
-	#if target == null:
-		#return
-
-	#if global_position.distance_squared_to(target.global_position) < 0.001:
-		#return
-
-	#look_at(target.global_position)
-
-	#if cooldown <= 0.0 and bullet_scene != null:
-		#shoot()
-		#cooldown = fire_interval
 
 func _physics_process(delta: float) -> void:
 	cooldown = maxf(cooldown - delta, 0.0)
@@ -83,15 +71,42 @@ func find_nearest_enemy() -> Node2D:
 	return closest
 
 
-func shoot() -> void:
-	print("Turret fired")
-	
-	var bullet := bullet_scene.instantiate() as Area2D
-	bullet.set("damage", damage)
+#func shoot() -> void:
+#	print("Turret fired")
+#	
+#	var bullet := bullet_scene.instantiate() as Area2D
+#	bullet.set("damage", damage)
 
-	get_tree().current_scene.add_child(bullet)
-	bullet.global_position = muzzle.global_position
-	bullet.global_rotation = global_rotation
+#	get_tree().current_scene.add_child(bullet)
+#	bullet.global_position = muzzle.global_position
+#	bullet.global_rotation = global_rotation
+
+func shoot() -> void:
+	if bullet_scene == null:
+		return
+
+	match weapon_type:
+		WeaponType.SHOTGUN:
+			spawn_projectile(-spread_angle_degrees)
+			spawn_projectile(0.0)
+			spawn_projectile(spread_angle_degrees)
+
+		WeaponType.SINGLE, WeaponType.ROCKET:
+			spawn_projectile(0.0)
+
+
+func spawn_projectile(angle_offset_degrees: float) -> void:
+	var projectile := bullet_scene.instantiate() as Area2D
+
+	# Each projectile receives this weapon's damage.
+	projectile.set("damage", damage)
+
+	get_tree().current_scene.add_child(projectile)
+
+	projectile.global_position = muzzle.global_position
+	projectile.global_rotation = (
+		global_rotation + deg_to_rad(angle_offset_degrees)
+	)
 
 func _ready() -> void:
 	print("Turret loaded: ", get_path())

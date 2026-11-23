@@ -1,0 +1,16 @@
+[gd_scene format=3 uid="uid://b0fel0tir3u4s"]
+
+[ext_resource type="Script" uid="uid://5g3f0eopbpdq" path="res://rocket.gd" id="1_6qqlu"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xk8p7"]
+size = Vector2(16, 6)
+
+[node name="Rocket2D" type="Area2D" unique_id=417076]
+collision_layer = 4
+collision_mask = 2
+script = ExtResource("1_6qqlu")
+
+[node name="Sprite2D" type="Sprite2D" parent="." unique_id=831810040]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=320705928]
+shape = SubResource("RectangleShape2D_xk8p7")

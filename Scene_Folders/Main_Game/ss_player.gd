@@ -17,6 +17,8 @@ var player_current_health: int
 var player_atk_timer: float
 var goopy_slow_time_left: float = 0.0
 
+var is_alive: bool = true
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	player_current_health = player_max_health
@@ -42,17 +44,23 @@ func _physics_process(delta: float) -> void:
 		rotation = velocity.angle()
 
 func take_damage(amount: int) -> void:
-	if player_current_health <= 0 or amount <= 0:
+	#if player_current_health <= 0 or amount <= 0:
+	#	return
+	if not is_alive or amount <= 0:
 		return
 
 	player_current_health = maxi(player_current_health - amount, 0)
 
 	if player_current_health == 0:
+		is_alive = false
+		
 		player_sprite.hide()
 		player_collision_box.set_deferred("disabled", true)
 		velocity = Vector2.ZERO
 		set_physics_process(false)
 		set_process_unhandled_input(false)
+		
+		weapons.process_mode = Node.PROCESS_MODE_DISABLED
 
 		weapons.process_mode = Node.PROCESS_MODE_DISABLED
 		return

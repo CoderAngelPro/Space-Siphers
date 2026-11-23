@@ -1,0 +1,15 @@
+[gd_scene format=3 uid="uid://db4d82wrev5c5"]
+
+[ext_resource type="Script" uid="uid://dosw2je2q8wq5" path="res://Scene_Folders/Main_Game/SS_Player_Weapon/turret.gd" id="1_62jjs"]
+[ext_resource type="PackedScene" uid="uid://b0fel0tir3u4s" path="res://Scene_Folders/Main_Game/SS_Player_Weapon/rocket_2d.tscn" id="2_62jjs"]
+
+[node name="Turret2D" type="Node2D" unique_id=2108656172]
+script = ExtResource("1_62jjs")
+weapon_type = 2
+spread_angle_degrees = 0.0
+bullet_scene = ExtResource("2_62jjs")
+damage = 100
+fire_interval = 1.5
+
+[node name="Muzzle2D" type="Marker2D" parent="." unique_id=1723899888]
+position = Vector2(80, 0)

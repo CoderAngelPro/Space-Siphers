@@ -2,8 +2,9 @@
 
 [ext_resource type="Script" uid="uid://byjg005m4ckrl" path="res://Scene_Folders/Main_Game/ss_player.gd" id="1_gr7o4"]
 [ext_resource type="Texture2D" uid="uid://c3g471o2pgyuf" path="res://ImageLibrary/Player_Ship/PlayerShip.png" id="2_gr7o4"]
-[ext_resource type="Script" uid="uid://dosw2je2q8wq5" path="res://Scene_Folders/Main_Game/SS_Player_Weapon/turret.gd" id="3_f02as"]
-[ext_resource type="PackedScene" uid="uid://s2de76gh1llc" path="res://Scene_Folders/Main_Game/bullet_2d.tscn" id="4_f02as"]
+[ext_resource type="PackedScene" uid="uid://bv88kgrq56k5a" path="res://Scene_Folders/Main_Game/SS_Player_Weapon/turret_2d.tscn" id="3_etjw2"]
+[ext_resource type="PackedScene" uid="uid://cyw8elmvgkogu" path="res://Scene_Folders/Main_Game/SS_Player_Weapon/shotgun_2d.tscn" id="4_f02as"]
+[ext_resource type="PackedScene" uid="uid://db4d82wrev5c5" path="res://Scene_Folders/Main_Game/SS_Player_Weapon/rocketlauncher_2d.tscn" id="5_a6n6l"]
 
 [node name="SS_Player_Node" type="CharacterBody2D" unique_id=1316858591]
 script = ExtResource("1_gr7o4")
@@ -25,9 +26,13 @@ zoom = Vector2(0.5, 0.5)
 
 [node name="Weapons2D" type="Node2D" parent="." unique_id=1308684705]
 
-[node name="Turret2D" type="Node2D" parent="Weapons2D" unique_id=903117482]
-script = ExtResource("3_f02as")
-bullet_scene = ExtResource("4_f02as")
+[node name="Turret2D" parent="Weapons2D" unique_id=2108656172 instance=ExtResource("3_etjw2")]
+process_mode = 4
+visible = false
+weapon_type = 2
 
-[node name="Muzzle2D" type="Marker2D" parent="Weapons2D/Turret2D" unique_id=1084336362]
-position = Vector2(80, 0)
+[node name="Shotgun2D" parent="Weapons2D" unique_id=688299161 instance=ExtResource("4_f02as")]
+process_mode = 4
+visible = false
+
+[node name="RocketLauncher2D" parent="Weapons2D" unique_id=300218318 instance=ExtResource("5_a6n6l")]

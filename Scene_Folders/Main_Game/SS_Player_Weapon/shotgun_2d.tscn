@@ -1,0 +1,14 @@
+[gd_scene format=3 uid="uid://cyw8elmvgkogu"]
+
+[ext_resource type="Script" uid="uid://dosw2je2q8wq5" path="res://Scene_Folders/Main_Game/SS_Player_Weapon/turret.gd" id="1_avqbk"]
+[ext_resource type="PackedScene" uid="uid://s2de76gh1llc" path="res://Scene_Folders/Main_Game/SS_Player_Weapon/bullet_2d.tscn" id="2_2eot3"]
+
+[node name="Turret2D" type="Node2D" unique_id=2108656172]
+script = ExtResource("1_avqbk")
+weapon_type = 1
+bullet_scene = ExtResource("2_2eot3")
+damage = 15
+fire_interval = 0.8
+
+[node name="Muzzle2D" type="Marker2D" parent="." unique_id=1723899888]
+position = Vector2(80, 0)

@@ -3,7 +3,7 @@ extends Area2D
 @export var speed: float = 700.0
 @export var lifetime: float = 2.0
 
-var damage: int = 50
+var damage: int = 0
 var age: float = 0.0
 var has_hit: bool = false
 
@@ -23,18 +23,6 @@ func _physics_process(delta: float) -> void:
 
 	if age >= lifetime:
 		queue_free()
-
-
-#func _on_body_entered(body: Node2D) -> void:
-	#if has_hit or not body.is_in_group("enemies"):
-		#return
-
-	#has_hit = true
-
-	#if body.has_method("take_damage"):
-		#body.take_damage(damage)
-
-	#queue_free()
 	
 func _on_body_entered(body: Node2D) -> void:
 	print("Bullet touched: ", body.name)
